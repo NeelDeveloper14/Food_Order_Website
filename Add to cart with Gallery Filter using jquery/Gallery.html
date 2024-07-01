@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Gallery Filter using Jquery </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <style>
+    body {
+      background-color: #dedede;
+    }
+
+    .cards {
+      box-shadow: 0px 0px 17px -10px rgba(0, 0, 0, 0.75);
+    }
+
+    .cards:hover {
+      cursor: pointer;
+      box-shadow: 20px 20px 100px -50px #000;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <div class="container p-5 mt-2 ">
+    <div class="row d-flex justify-content-center ">
+      <div class="col-1"></div>
+      <div class="col-8">
+        <div class="input-group  mt-2">
+          <input type="text" placeholder="Search....." class="form-control" id="inp">
+          <div class="input-group-append">
+            <button type="button" class="btn btn-dark" id="search" style="z-index:0;">Search</button>
+          </div>
+        </div>
+      </div>
+      
+             
+             <!-- this video is part 2 -->
+          <!-- add to cart icon add -->
+
+          <div class="col-md-3 d-flex justify-content-start">
+            <div class="pt-3 pl-0 pb-0 pr-0">
+              <i class="fas fa-shopping-cart fa-2x ml-md-5"></i>
+            </div>
+            <span class="badge badge-success mt-0 align-self-start" id="cart_item_count" style="margin-left: -25px;margin-top: -5px;">0</span>
+            
+          </div>
+
+
+
+
+
+    </div>
+    <div class="row p-5" id="panel">
+      <h1 class="display-3 text-center text-muted" id="not_find_any_thing"></h1>
+
+      <div class="col-md-6 col-lg-3 mt-5">
+        <div class="cards p-2">
+          <img class="card-img-top" src="https://assets.reebok.com/images/w_600,f_auto,q_auto/5f160a8e6afb482c89c7ad710167cea9_9366/Classic_Leather_1983_Vintage_Shoes_White_GX6123_01_standard.jpg" alt="">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+
+              <h5 class="card-title">Reebok</h5>
+              <div>
+                <span class="text-success">$</span><span class="text-success">150</span>
+              </div>
+            </div>
+            <p class="card-text" style="font-size:14px;">Nanoflex TR Men's Training Shoes green</p>
+            <div class="d-flex justify-content-between">
+
+              <div class="bg-dark text-white text-center pl-2 pr-2 cart_btn">Buy Now</div>
+              <div class="bg-dark text-white text-center pl-2 pr-2">Wishlist</div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-lg-3 mt-5">
+        <div class="cards p-2">
+          <img class="card-img-top" src="https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/bbe20c21b6194528a2f4ad6a00f9c1c2_9366/nmd_r1-primeblue-shoes.jpg" alt="">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+
+              <h5 class="card-title">Adidas</h5>
+              <div>
+                <span class="text-success">$</span><span class="text-success">120</span>
+              </div>
+            </div>
+            <p class="card-text" style="font-size:14px;">NMD R1 Primerable Shoes Black GX3534</p>
+            <div class="d-flex justify-content-between">
+
+              <div class="bg-dark text-white text-center pl-2 pr-2 cart_btn">Buy Now</div>
+              <div class="bg-dark text-white text-center pl-2 pr-2">Wishlist</div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-6 col-lg-3 mt-5">
+        <div class="cards p-2">
+          <img class="card-img-top" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4f37fca8-6bce-43e7-ad07-f57ae3c13142/air-force-1-07-mens-shoes-5QFp5Z.png" alt="">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+
+              <h5 class="card-title">Nike</h5>
+              <div>
+
+                <span class="text-success">$</span><span class="text-success">130</span>
+              </div>
+            </div>
+            <p class="card-text" style="font-size:14px;">NMD R1 Shoes black GZ4534</p>
+            <div class="d-flex justify-content-between">
+
+              <div class="bg-dark text-white text-center pl-2 pr-2 cart_btn">Buy Now</div>
+              <div class="bg-dark text-white text-center pl-2 pr-2">Wishlist</div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-6 col-lg-3 mt-5">
+        <div class="cards p-2">
+          <img class="card-img-top" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4f37fca8-6bce-43e7-ad07-f57ae3c13142/air-force-1-07-mens-shoes-5QFp5Z.png" alt="">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+
+              <h5 class="card-title">Nike</h5>
+              <div>
+                <span class="text-success">$</span><span class="text-success">160</span>
+              </div>
+            </div>
+            <p class="card-text" style="font-size:14px;">Ultraboast 21 Shoes Fy2347</p>
+            <div class="d-flex justify-content-between">
+
+              <div class="bg-dark text-white text-center pl-2 pr-2 cart_btn">Buy Now</div>
+              <div class="bg-dark text-white text-center pl-2 pr-2">Wishlist</div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-lg-3 mt-5">
+        <div class="cards p-2">
+          <img class="card-img-top" src="https://assets.reebok.com/images/w_600,f_auto,q_auto/4e84782e2543467b82d2adff009b7c1c_9366/Classic_Leather_Shoes_Blue_GY3600_01_standard.jpg" alt="">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+
+              <h5 class="card-title">Reebok</h5>
+              <div>
+
+                <span class="text-success">$</span><span class="text-success">100</span>
+              </div>
+            </div>
+            <p class="card-text" style="font-size:14px;">A workhorse built to help power you through</p>
+            <div class="d-flex justify-content-between">
+
+              <div class="bg-dark text-white text-center pl-2 pr-2 cart_btn">Buy Now</div>
+              <div class="bg-dark text-white text-center pl-2 pr-2">Wishlist</div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-lg-3 mt-5">
+        <div class="cards p-2">
+          <img class="card-img-top" src="https://assets.reebok.com/images/w_600,f_auto,q_auto/4e84782e2543467b82d2adff009b7c1c_9366/Classic_Leather_Shoes_Blue_GY3600_01_standard.jpg" alt="">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+
+              <h5 class="card-title">Reebok</h5>
+              <div>
+
+                <span class="text-success">$</span><span class="text-success">180</span>
+              </div>
+            </div>
+            <p class="card-text" style="font-size:14px;">Energen Run Men's Running Shoes Blue</p>
+            <div class="d-flex justify-content-between">
+
+              <div class="bg-dark text-white text-center pl-2 pr-2 cart_btn">Buy Now</div>
+              <div class="bg-dark text-white text-center pl-2 pr-2">Wishlist</div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-lg-3 mt-5">
+        <div class="cards p-2">
+          <img class="card-img-top" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4f37fca8-6bce-43e7-ad07-f57ae3c13142/air-force-1-07-mens-shoes-5QFp5Z.png" alt="">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+
+              <h5 class="card-title">Nike</h5>
+              <div>
+                <span class="text-success">$</span><span class="text-success">100</span>
+              </div>
+            </div>
+            <p class="card-text" style="font-size:14px;">A workhorse built to help power you through</p>
+            <div class="d-flex justify-content-between">
+
+              <div class="bg-dark text-white text-center pl-2 pr-2 cart_btn">Buy Now</div>
+              <div class="bg-dark text-white text-center pl-2 pr-2">Wishlist</div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-lg-3 mt-5">
+        <div class="cards p-2">
+          <img class="card-img-top" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4f37fca8-6bce-43e7-ad07-f57ae3c13142/air-force-1-07-mens-shoes-5QFp5Z.png" alt="">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+
+              <h5 class="card-title">Nike</h5>
+              <div>
+
+                <span class="text-success">$</span><span class="text-success">100</span>
+              </div>
+            </div>
+            <p class="card-text" style="font-size:14px;">A workhorse built to help power you through</p>
+            <div class="d-flex justify-content-between">
+
+              <div class="bg-dark text-white text-center pl-2 pr-2 cart_btn">Buy Now</div>
+              <div class="bg-dark text-white text-center pl-2 pr-2">Wishlist</div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-6 col-lg-3 mt-5">
+        <div class="cards p-2">
+          <img class="card-img-top" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4f37fca8-6bce-43e7-ad07-f57ae3c13142/air-force-1-07-mens-shoes-5QFp5Z.png" alt="">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+
+              <h5 class="card-title">Nike</h5>
+              <div>
+
+                <span class="text-success">$</span><span class="text-success">90</span>
+              </div>
+            </div>
+            <p class="card-text" style="font-size:14px;">Advance Trainer Men's Shoes Grey RX4537</p>
+            <div class="d-flex justify-content-between">
+
+              <div class="bg-dark text-white text-center pl-2 pr-2 cart_btn">Buy Now</div>
+              <div class="bg-dark text-white text-center pl-2 pr-2">Wishlist</div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-lg-3 mt-5">
+        <div class="cards p-2">
+          <img class="card-img-top" src="https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/bbe20c21b6194528a2f4ad6a00f9c1c2_9366/nmd_r1-primeblue-shoes.jpg" alt="">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+
+              <h5 class="card-title">Adidas</h5>
+              <div>
+                <span class="text-success">$</span><span class="text-success">120</span>
+              </div>
+            </div>
+            <p class="card-text" style="font-size:14px;">Ultraboast 3.5 DNA Shoes Grey YT7878</p>
+            <div class="d-flex justify-content-between">
+
+              <div class="bg-dark text-white text-center pl-2 pr-2 cart_btn">Buy Now</div>
+              <div class="bg-dark text-white text-center pl-2 pr-2">Wishlist</div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-lg-3 mt-5">
+        <div class="cards p-2">
+          <img class="card-img-top" src="https://assets.reebok.com/images/w_600,f_auto,q_auto/24b817b111e2459f9e7badd8003f919c_9366/Classic_Leather_Shoes_White_GY0953_01_standard.jpg" alt="">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+
+              <h5 class="card-title">Reebok</h5>
+              <div>
+
+                <span class="text-success">$</span><span class="text-success">190</span>
+              </div>
+            </div>
+            <p class="card-text" style="font-size:14px;">A workhorse built to help power you through</p>
+            <div class="d-flex justify-content-between">
+
+              <div class="bg-dark text-white text-center pl-2 pr-2 cart_btn">Buy Now</div>
+              <div class="bg-dark text-white text-center pl-2 pr-2">Wishlist</div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-6 col-lg-3 mt-5">
+        <div class="cards p-2">
+          <img class="card-img-top" src="https://assets.reebok.com/images/w_600,f_auto,q_auto/24b817b111e2459f9e7badd8003f919c_9366/Classic_Leather_Shoes_White_GY0953_01_standard.jpg" alt="">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">Reebok</h5>
+              <div>
+                <span class="text-success">$</span><span class="text-success">100</span>
+              </div>
+            </div>
+            <p class="card-text" style="font-size:14px;">A workhorse built to help power you through</p>
+            <div class="d-flex justify-content-between">
+
+              <div class="bg-dark text-white text-center pl-2 pr-2 cart_btn">Buy Now</div>
+              <div class="bg-dark text-white text-center pl-2 pr-2">Wishlist</div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+                  <!--   This Video is part 2  -->
+
+
+  <!-- ================================= Cart ===================================== -->
+
+
+ 
+ <div class="row pr-md-5 d-flex justify-content-center justify-content-md-end bg-info">
+  <div class="col-md-6 col-lg-4 mr-lg-5 border p-3 pb-4 rounded-lg bg-white ml-md-0" id="cart" style="position: absolute;z-index: 1;top: 80px;overflow: auto;">
+
+    <div class="d-flex">
+      <div class="col-md-3">
+         <h5>Product</h5>        
+      </div>
+      <div class="col-md-3 d-flex flex-wrap align-content-center">
+        <h5>Title</h5>
+      </div>
+      <div class="col-md-3 d-flex flex-wrap align-content-center">
+        <h5>Qty</h5>
+      </div>
+      <div class="col-md-2 d-flex flex-wrap align-content-center">
+        <h5>Price</h5>
+      </div>
+      <div class="col-md-1"></div>
+      
+    </div>
+
+    <div id="order" style="overflow: auto;height: 250px;">
+      
+    </div>
+    <div id="cart_footer">
+  <div id="order_btn" class="text-center text-white w-100 bg-dark p-2 font-weight-bold" style="letter-spacing: 1.2px;font-size: 20px;">
+    Order
+  </div>      
+    </div>
+    
+  </div>
+   
+ </div>
+
+<script>
+  
+//jquery coding
+
+$(document).ready(function(){
+
+$('#search').click(function(){
+
+  var checker = 0;
+  for (var i = 0; i < 12; i++) {
+    var card = $("div").filter(".col-md-6")[i];
+    var title = $("h5").filter(".card-title")[i].innerText.toUpperCase();
+
+    if (title.indexOf($("#inp").val().toUpperCase()) > -1) {
+      card.style.display = 'block';
+      checker++;
+    }
+    else{
+      card.style.display = 'none';
+    }
+  }
+
+if (checker > 0) {
+$("#not_find_any_thing").text("");
+
+}
+else {
+$("#not_find_any_thing").text("No Result Found").fadeIn();
+}
+
+
+});
+});
+
+
+// this video is part 2 
+
+ // jquery for add to cart
+
+
+$(document).ready(function(){
+
+$("#cart").hide();
+
+$(".fa-shopping-cart").mouseenter(function(){
+$('#cart').show();
+})
+
+$("#cart").mouseleave(function(){
+$("#cart").hide();
+})
+
+
+var cart_item_count = 0;
+$('.cart_btn').click(function(){
+cart_item_count++;
+var img_src = $(this).parents(".card-body").siblings("img").attr("src");
+var titlte = $(this).parents(".d-flex").siblings(".d-flex").find(".card-title").text();
+var price = $(this).parents(".d-flex").siblings(".d-flex").find("span:nth-child(2)").text();
+
+
+var cart_item =  `
+ 
+ <div class=" main d-flex p-3 border border-left-0 border-right-0 border-top-0">
+  <div class="col-md-3 border border-left-0 border-top-0 border-bottom-0">
+  <img src=${img_src} class="w-100" alt=""/>
+  </div>
+
+  <div id="title" class="col-md-3 d-flex flex-wrap align-content-center">
+     <h6 style="font-size:13px;">${titlte}</h6>
+  </div>
+
+  <div class="col-md-3 d-flex flex-wrap align-content-center">
+  <span class="mx-2"> 1 </span>
+  </div>
+
+  <div class="col-md-2 d-flex flex-wrap align-content-center" id="t_price">
+    <h6 class="mt-2 d-flex"><span> $ </span><span class="cart_item_price"> ${price} </span></h6>
+  </div>
+
+  <div class="col-md-1 d-flex flex-wrap align-content-center">
+  <span class="close" style="cursor:pointer;font-size:25px;">&times;</span>
+  </div>
+
+ </div>
+
+`
+ 
+ $("#order").append(cart_item);
+
+ $("#cart_item_count").text(cart_item_count);
+ $(".close").click(function(){
+  $(this).parents(".main").remove();
+
+  item_count();
+ })
+ item_count();
+})
+function item_count(){
+
+var res = $("#order").children().length;
+$("#cart_item_count").text(res);
+}
+
+})
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
